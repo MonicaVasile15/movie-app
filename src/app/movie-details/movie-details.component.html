@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<ng-container *ngIf="movie">
+	<div class="container">
+		<div class="movie-card">
+			<img [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + movie?.poster_path" class="movie-image">
+			<div class="movie-data">
+				<div class="movie-title">{{movie?.title}}</div>
+				<div>
+					&#9733;{{movie?.vote_average}} | {{movie?.runtime}} min | {{movie?.release_date | date: 'dd MMM yyyy'}}
+				</div>
+				<div class="movie-description">{{movie?.overview}}</div>
+				<div>
+					<b>Genres: </b>
+					<span *ngFor="let genre of movie?.genres" class="list-style">{{genre.name}}</span>
+				</div>
+				<div>
+					<b>Production: </b>
+					<span *ngFor="let production of movie?.production_companies" class="list-style">{{production.name}}</span>
+				</div>
+				<div class="imdb-link-wrapper">
+					<a class="imdb-link" [href]="'https://www.imdb.com/title/'+movie?.imdb_id">IMDB &#8599;</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-container>

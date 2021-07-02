@@ -1,0 +1,16 @@
+<div class="login-wrapper">
+	<form [formGroup]="loginForm">
+		<mat-form-field>
+			<input matInput formControlName="username">
+			<mat-placeholder>Username</mat-placeholder>
+		</mat-form-field>
+		<mat-form-field>
+			<input matInput formControlName="password" type="password">
+			<mat-placeholder>Password</mat-placeholder>
+		</mat-form-field>
+		<ng-container *ngIf="showError">
+			<div class="error">Incorrect user or password</div>
+		</ng-container>
+		<button mat-raised-button (click)="login()" color="primary">Login</button>
+	</form>
+</div>
