@@ -2,8 +2,9 @@
 
 Login credentials:
 
-username: admin;
-password: admin;
+username: admin
+
+password: admin
 
 ## Development server
 
